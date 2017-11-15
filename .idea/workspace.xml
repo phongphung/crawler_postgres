@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="26e0ca5f-d9e6-4449-b919-f1904f58435c" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/WebCrawler$Main.coverage" NAME="Main Coverage Results" MODIFIED="1508724842339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WebCrawler_dev$Main.coverage" NAME="Main Coverage Results" MODIFIED="1510652933965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="PostgreSQL - crawler@localhost" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="PostgreSQL - crawler@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="crawler" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="PostgreSQL - crawler@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="crawler" type="e3449647:DbNodeDescriptor" />
+        <item name="crawl01" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="PostgreSQL - crawler@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="crawler" type="e3449647:DbNodeDescriptor" />
+        <item name="crawl01" type="e3449647:DbNodeDescriptor" />
+        <item name="" type="fce03ad6:DatabaseStructure$GroupNode" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="PostgreSQL - crawler@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="crawler" type="e3449647:DbNodeDescriptor" />
+        <item name="crawl01" type="e3449647:DbNodeDescriptor" />
+        <item name="" type="fce03ad6:DatabaseStructure$GroupNode" />
+        <item name="data" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="PostgreSQL - crawler@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="crawler" type="e3449647:DbNodeDescriptor" />
+        <item name="crawl01" type="e3449647:DbNodeDescriptor" />
+        <item name="" type="fce03ad6:DatabaseStructure$GroupNode" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SQLFunction.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SQLFunction.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1100">
+              <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+              <folding>
+                <marker date="1510303609555" expanded="true" signature="117:199" ph="select exist... " />
+                <marker date="1510303609555" expanded="true" signature="131:193" ph="select * fro... pg_tables" />
+                <marker date="1510303609555" expanded="true" signature="131:194" ph="select * fro... tables" />
+                <marker date="1510303609555" expanded="true" signature="131:198" ph="select * fro... pg_tables" />
+                <marker date="1510303609555" expanded="true" signature="758:804" ph="SELECT _id F... missing_value" />
+                <marker date="1510303609555" expanded="true" signature="927:963" ph="INSERT INTO missing_value.missing_value... " />
+                <marker date="1510303609555" expanded="true" signature="1579:1610" ph="UPDATE missi... " />
+                <marker date="1510303609555" expanded="true" signature="1579:1611" ph="UPDATE missi... " />
+                <marker date="1510303609555" expanded="true" signature="2565:2614" ph="UPDATE missi... " />
+                <marker date="1510303609555" expanded="true" signature="3677:3688" ph="DROP TABLE m... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Feedfinder.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Feedfinder.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="48" column="12" lean-forward="true" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PageInfoFinder.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PageInfoFinder.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="552">
+              <caret line="125" column="31" lean-forward="true" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostgreSQL.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PostgreSQL.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+                <marker date="1510652024726" expanded="true" signature="2258:2869" ph="CREATE TABLE... missing_value" />
+                <marker date="1510652024726" expanded="true" signature="3150:3338" ph="CREATE TABLE... missing_value" />
+                <marker date="1510652024726" expanded="true" signature="3460:3517" ph="CREATE INDEX... sta" />
+                <marker date="1510652024726" expanded="true" signature="3647:3698" ph="CREATE INDEX... crawlqueue_index_url" />
+                <marker date="1510652024726" expanded="true" signature="3975:4078" ph="UPDATE missi... " />
+                <marker date="1510652024726" expanded="true" signature="3975:4082" ph="UPDATE missi... " />
+                <marker date="1510652024726" expanded="true" signature="4718:4749" ph="SELECT EXIST... " />
+                <marker date="1510652024726" expanded="true" signature="4718:4751" ph="SELECT EXIST... " />
+                <marker date="1510652024726" expanded="true" signature="4718:4768" ph="SELECT EXIST... " />
+                <marker date="1510652024726" expanded="true" signature="4718:4771" ph="SELECT EXIST... " />
+                <marker date="1510652024726" expanded="true" signature="6287:6312" ph="UPDATE missi... " />
+                <marker date="1510652024726" expanded="true" signature="6287:6332" ph="UPDATE missi... " />
+                <marker date="1510652024726" expanded="true" signature="6606:6642" ph="SELECT count... " />
+                <marker date="1510652024726" expanded="true" signature="6606:6650" ph="SELECT 1 FRO... missing_value" />
+                <marker date="1510652024726" expanded="true" signature="6820:6864" ph="UPDATE missi... " />
+                <marker date="1510652024726" expanded="true" signature="6820:6866" ph="UPDATE {}.{}... " />
+                <marker date="1510652024726" expanded="true" signature="7112:7157" ph="UPDATE missi... " />
+                <marker date="1510652024726" expanded="true" signature="7758:7800" ph="UPDATE missi... " />
+                <marker date="1510652024726" expanded="true" signature="7758:7802" ph="UPDATE {}.{}... " />
+                <marker date="1510652024726" expanded="true" signature="8657:9287" ph="UPDATE missi... " />
+                <marker date="1510652024726" expanded="true" signature="8657:9288" ph="UPDATE missi... " />
+                <marker date="1510652024726" expanded="true" signature="8657:9296" ph="UPDATE missi... " />
+                <marker date="1510652024726" expanded="true" signature="8657:9298" ph="UPDATE missi... " />
+                <marker date="1510652024726" expanded="true" signature="8657:9299" ph="UPDATE missi... " />
+                <marker date="1510652024726" expanded="true" signature="8657:9307" ph="UPDATE missi... " />
+                <marker date="1510652024726" expanded="true" signature="8685:9287" ph="SET {0}._id " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadedCrawler.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ThreadedCrawler.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MultiProcessingCrawler.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MultiProcessingCrawler.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="560">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddLink.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AddLink.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>find</find>
+      <find>tree</find>
+      <find>hebdi</find>
+      <find>temp:</find>
+      <find>if temp:</find>
+      <find>if len(temp) &gt; 0:</find>
+      <find>a</find>
+      <find>schem</find>
+      <find>fetchone</find>
+      <find>conn.commit()</find>
+      <find>insert</find>
+      <find>reset</find>
+      <find>dict</find>
+      <find>lower</find>
+      <find>exists</find>
+      <find>self.OUTSTANDING</find>
+      <find>f</find>
+      <find>F</find>
+      <find>tree.find</find>
+      <find>get_page</find>
+      <find>keyword</find>
+      <find>rss</find>
+      <find>UPDATE</find>
+      <find>db</find>
+      <find>process_link_crawler</find>
+      <find>temp_</find>
+      <find>print(data</find>
+      <find>array</find>
+      <find>http://api.20min.ch/rss/view/1</find>
+      <find>print</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>len(temp) &gt; 0:</replace>
+      <replace>.collection</replace>
+      <replace>if len(temp) &gt; 0:</replace>
+      <replace>if temp is not None and len(temp) &gt; 0:</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Test.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3957e3b6-5aca-42c1-9d73-d49b123e70d7/console.sql" />
+        <option value="$PROJECT_DIR$/MongoDB.py" />
+        <option value="$PROJECT_DIR$/1.py" />
+        <option value="$PROJECT_DIR$/config.yml" />
+        <option value="$PROJECT_DIR$/Util.py" />
+        <option value="$PROJECT_DIR$/SQLFunction.py" />
+        <option value="$PROJECT_DIR$/AddLink.py" />
+        <option value="$PROJECT_DIR$/PageInfoFinder.py" />
+        <option value="$PROJECT_DIR$/Feedfinder.py" />
+        <option value="$PROJECT_DIR$/WebCrawler.py" />
+        <option value="$PROJECT_DIR$/MultiProcessingCrawler.py" />
+        <option value="$PROJECT_DIR$/PostgreSQL.py" />
+        <option value="$PROJECT_DIR$/Main.py" />
+        <option value="$PROJECT_DIR$/ThreadedCrawler.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2175" />
+    <option name="y" value="234" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SqlResolveInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="WebCrawler_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebCrawler_dev" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebCrawler_dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebCrawler_dev" type="462c0819:PsiDirectoryNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="E:/WebCrawler" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
+    <property name="SearchEverywhereHistoryKey" value="{&#9;null&#9;null" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WebCrawler_dev\Data" />
+      <recent name="E:\WebCrawler" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WebCrawler" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.Main">
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="WebCrawler" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="26e0ca5f-d9e6-4449-b919-f1904f58435c" name="Default" comment="" />
+      <created>1508381406081</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1508381406081</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28944564" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58804345" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="0" width="1920" height="1040" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.49573562" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="9" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/PageInfoFinder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThreadedCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQLFunction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+          <folding>
+            <marker date="1510303609555" expanded="true" signature="117:199" ph="select exist... " />
+            <marker date="1510303609555" expanded="true" signature="131:193" ph="select * fro... pg_tables" />
+            <marker date="1510303609555" expanded="true" signature="131:194" ph="select * fro... tables" />
+            <marker date="1510303609555" expanded="true" signature="131:198" ph="select * fro... pg_tables" />
+            <marker date="1510303609555" expanded="true" signature="758:804" ph="SELECT _id F... missing_value" />
+            <marker date="1510303609555" expanded="true" signature="927:963" ph="INSERT INTO missing_value.missing_value... " />
+            <marker date="1510303609555" expanded="true" signature="1579:1610" ph="UPDATE missi... " />
+            <marker date="1510303609555" expanded="true" signature="1579:1611" ph="UPDATE missi... " />
+            <marker date="1510303609555" expanded="true" signature="2565:2614" ph="UPDATE missi... " />
+            <marker date="1510303609555" expanded="true" signature="3677:3688" ph="DROP TABLE m... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PostgreSQL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="56" column="21" lean-forward="false" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1510652024726" expanded="true" signature="2258:2869" ph="CREATE TABLE... missing_value" />
+            <marker date="1510652024726" expanded="true" signature="3150:3338" ph="CREATE TABLE... missing_value" />
+            <marker date="1510652024726" expanded="true" signature="3460:3517" ph="CREATE INDEX... sta" />
+            <marker date="1510652024726" expanded="true" signature="3647:3698" ph="CREATE INDEX... crawlqueue_index_url" />
+            <marker date="1510652024726" expanded="true" signature="3975:4078" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="3975:4082" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="4718:4749" ph="SELECT EXIST... " />
+            <marker date="1510652024726" expanded="true" signature="4718:4751" ph="SELECT EXIST... " />
+            <marker date="1510652024726" expanded="true" signature="4718:4768" ph="SELECT EXIST... " />
+            <marker date="1510652024726" expanded="true" signature="4718:4771" ph="SELECT EXIST... " />
+            <marker date="1510652024726" expanded="true" signature="6287:6312" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="6287:6332" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="6606:6642" ph="SELECT count... " />
+            <marker date="1510652024726" expanded="true" signature="6606:6650" ph="SELECT 1 FRO... missing_value" />
+            <marker date="1510652024726" expanded="true" signature="6820:6864" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="6820:6866" ph="UPDATE {}.{}... " />
+            <marker date="1510652024726" expanded="true" signature="7112:7157" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="7758:7800" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="7758:7802" ph="UPDATE {}.{}... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9287" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9288" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9296" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9298" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9299" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9307" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8685:9287" ph="SET {0}._id " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3957e3b6-5aca-42c1-9d73-d49b123e70d7/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Feedfinder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="57" column="41" lean-forward="false" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultiProcessingCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="27" column="50" lean-forward="false" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PageInfoFinder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThreadedCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3957e3b6-5aca-42c1-9d73-d49b123e70d7/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Feedfinder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="57" column="41" lean-forward="false" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultiProcessingCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="27" column="50" lean-forward="false" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PageInfoFinder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThreadedCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PostgreSQL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="25" column="14" lean-forward="false" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1510652024726" expanded="true" signature="2258:2869" ph="CREATE TABLE... missing_value" />
+            <marker date="1510652024726" expanded="true" signature="3150:3338" ph="CREATE TABLE... missing_value" />
+            <marker date="1510652024726" expanded="true" signature="3460:3517" ph="CREATE INDEX... sta" />
+            <marker date="1510652024726" expanded="true" signature="3647:3698" ph="CREATE INDEX... crawlqueue_index_url" />
+            <marker date="1510652024726" expanded="true" signature="3975:4078" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="3975:4082" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="4718:4749" ph="SELECT EXIST... " />
+            <marker date="1510652024726" expanded="true" signature="4718:4751" ph="SELECT EXIST... " />
+            <marker date="1510652024726" expanded="true" signature="4718:4768" ph="SELECT EXIST... " />
+            <marker date="1510652024726" expanded="true" signature="4718:4771" ph="SELECT EXIST... " />
+            <marker date="1510652024726" expanded="true" signature="6287:6312" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="6287:6332" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="6606:6642" ph="SELECT count... " />
+            <marker date="1510652024726" expanded="true" signature="6606:6650" ph="SELECT 1 FRO... missing_value" />
+            <marker date="1510652024726" expanded="true" signature="6820:6864" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="6820:6866" ph="UPDATE {}.{}... " />
+            <marker date="1510652024726" expanded="true" signature="7112:7157" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="7758:7800" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="7758:7802" ph="UPDATE {}.{}... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9287" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9288" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9296" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9298" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9299" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9307" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8685:9287" ph="SET {0}._id " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Feedfinder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="57" column="41" lean-forward="true" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/MongoDB.py" />
+    <entry file="file://$PROJECT_DIR$/MultiProcessingCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="27" column="50" lean-forward="true" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PageInfoFinder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThreadedCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThreadedCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3957e3b6-5aca-42c1-9d73-d49b123e70d7/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="44" lean-forward="false" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/2dd862bd/3957e3b6-5aca-42c1-9d73-d49b123e70d7/crawler.crawl01.data">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/MongoDB.py" />
+    <entry file="file://E:/Users/sentifi/Anaconda3/Lib/site-packages/tldextract/tldextract.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="217" column="0" lean-forward="false" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1.py" />
+    <entry file="file://$PROJECT_DIR$/Data/data1.csv" />
+    <entry file="file://$PROJECT_DIR$/Util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="42" column="19" lean-forward="true" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Users/sentifi/Anaconda3/Lib/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="5505" column="0" lean-forward="false" selection-start-line="5505" selection-start-column="0" selection-end-line="5505" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Users/sentifi/Anaconda3/pkgs/notebook-5.0.0-py27h73e74a6_2/Lib/site-packages/notebook/static/components/codemirror/mode/pug/pug.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQLFunction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding>
+            <marker date="1510303609555" expanded="true" signature="117:199" ph="select exist... " />
+            <marker date="1510303609555" expanded="true" signature="131:193" ph="select * fro... pg_tables" />
+            <marker date="1510303609555" expanded="true" signature="131:194" ph="select * fro... tables" />
+            <marker date="1510303609555" expanded="true" signature="131:198" ph="select * fro... pg_tables" />
+            <marker date="1510303609555" expanded="true" signature="758:804" ph="SELECT _id F... missing_value" />
+            <marker date="1510303609555" expanded="true" signature="927:963" ph="INSERT INTO missing_value.missing_value... " />
+            <marker date="1510303609555" expanded="true" signature="1579:1610" ph="UPDATE missi... " />
+            <marker date="1510303609555" expanded="true" signature="1579:1611" ph="UPDATE missi... " />
+            <marker date="1510303609555" expanded="true" signature="2565:2614" ph="UPDATE missi... " />
+            <marker date="1510303609555" expanded="true" signature="3677:3688" ph="DROP TABLE m... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Feedfinder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="48" column="12" lean-forward="true" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#36#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultiProcessingCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AddLink.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phong_thread.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PageInfoFinder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="125" column="31" lean-forward="true" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PostgreSQL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1510652024726" expanded="true" signature="2258:2869" ph="CREATE TABLE... missing_value" />
+            <marker date="1510652024726" expanded="true" signature="3150:3338" ph="CREATE TABLE... missing_value" />
+            <marker date="1510652024726" expanded="true" signature="3460:3517" ph="CREATE INDEX... sta" />
+            <marker date="1510652024726" expanded="true" signature="3647:3698" ph="CREATE INDEX... crawlqueue_index_url" />
+            <marker date="1510652024726" expanded="true" signature="3975:4078" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="3975:4082" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="4718:4749" ph="SELECT EXIST... " />
+            <marker date="1510652024726" expanded="true" signature="4718:4751" ph="SELECT EXIST... " />
+            <marker date="1510652024726" expanded="true" signature="4718:4768" ph="SELECT EXIST... " />
+            <marker date="1510652024726" expanded="true" signature="4718:4771" ph="SELECT EXIST... " />
+            <marker date="1510652024726" expanded="true" signature="6287:6312" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="6287:6332" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="6606:6642" ph="SELECT count... " />
+            <marker date="1510652024726" expanded="true" signature="6606:6650" ph="SELECT 1 FRO... missing_value" />
+            <marker date="1510652024726" expanded="true" signature="6820:6864" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="6820:6866" ph="UPDATE {}.{}... " />
+            <marker date="1510652024726" expanded="true" signature="7112:7157" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="7758:7800" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="7758:7802" ph="UPDATE {}.{}... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9287" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9288" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9296" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9298" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9299" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8657:9307" ph="UPDATE missi... " />
+            <marker date="1510652024726" expanded="true" signature="8685:9287" ph="SET {0}._id " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThreadedCrawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

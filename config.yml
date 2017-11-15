@@ -1,0 +1,11 @@
+WAIT_AT_END: 600
+download:
+  OUTSTANDING: 0
+  PROCESSING: 1
+  COMPLETE: 2
+  ERROR: 3
+database:
+  LOCAL_DB: "dbname='crawler' user='postgres' host='localhost' password='motsach' port=5432"
+  CRAWL_TABLE: 'crawlQueue'
+  DATA_TABLE: 'data'
+  SCHEMA: 'crawl01'
