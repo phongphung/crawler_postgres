@@ -93,4 +93,3 @@ class FeedFinder(object):
             pass
         rss_list = list(set(rss_list))
         return rss_list
-

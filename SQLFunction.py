@@ -78,6 +78,7 @@ def sql_query_check_not_crawled_execute(schema, table, cur, limit):
                         SELECT id
                         FROM {0}.{1}
                         WHERE status = 0
+                        FOR UPDATE
                         LIMIT {2}
                 )
                 UPDATE {0}.{1} db

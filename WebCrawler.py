@@ -1,4 +1,4 @@
-from PostgreSQL import PostgresQueue
+# from PostgreSQL import PostgresQueue
 from Feedfinder import FeedFinder
 from PageInfoFinder import PageInfoFinder
 from Util import *
@@ -15,7 +15,7 @@ class WebCrawler:
         self.links = []
         self.feed_finder = FeedFinder()
         self.page_info_finder = PageInfoFinder()
-        self.db = PostgresQueue()
+        # self.db = PostgresQueue()
         self.result = pd.DataFrame()
 
     def update_result(self, domain, url, page_info, rss):
@@ -36,5 +36,5 @@ class WebCrawler:
             self.update_result(domain, url, page_info, rss)
             return 2  # COMPLETE STATUS
         else:
-            self.db.error(url, domain)
+            # self.db.error(url, domain)
             return 4  # ERROR STATUS

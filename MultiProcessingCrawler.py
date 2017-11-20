@@ -1,25 +1,17 @@
-import multiprocessing
-from ThreadedCrawler import *
-import logging
-import sys
-
-logging.basicConfig(filename='phong_process.log',level=logging.DEBUG)
-logger = logging.getLogger(__name__)
-
-
-def my_handler(extype, value, tb):
-    logger.exception("Uncaught exception: \n Type: {0}, Value: {1}, Traceback: {2}".format(str(extype), str(value), str(tb)))
-
-
-sys.excepthook = my_handler
+import multiprocessing as mp
+from ThreadedCrawler import threaded_crawler
+from Test import test
 
 
 def process_link_crawler(args, **kwargs):
-    num_cpus = multiprocessing.cpu_count() * 2
-    print('Run on # processes: {}'.format(num_cpus))
+    num_processes = mp.cpu_count() * 5
+    num_processes = 1
     processes = []
-    for i in range(num_cpus):
-        p = multiprocessing.Process(target=threaded_crawler, args=[args], kwargs=kwargs)
+
+    for i in range(num_processes):
+
+        # p = mp.Process(target=threaded_crawler, args=[args], kwargs=kwargs)
+        p = mp.Process(target=threaded_crawler, args=[args], kwargs=kwargs)
         p.start()
         processes.append(p)
 
