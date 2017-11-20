@@ -5,6 +5,7 @@ import tldextract
 import urllib.parse
 import lxml.html
 from local_var import *
+from PostgreSQL import PostgresQueue
 
 
 def get_page(url, num_retries=2, user_agent=USER_AGENT):
@@ -98,3 +99,14 @@ def get_domain(url):
         return tldextract.extract(url).domain
     except Exception as e:
         return str(e)
+
+
+def check_init():
+    db = PostgresQueue()
+    try:
+        db.reset_outstanding()
+    except Exception as e:
+        print(str(e))
+    finally:
+        db.close()
+    del db

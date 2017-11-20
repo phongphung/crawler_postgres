@@ -1,19 +1,10 @@
 from AddLink import *
 import cProfile
-from PostgreSQL import PostgresQueue
+from Util import check_init
 from MultiProcessingCrawler import process_link_crawler
-
+from local_var import *
 
 if __name__ == '__main__':
-    db = PostgresQueue()
-    try:
-        db.reset_outstanding()
-    except Exception as e:
-        print(str(e))
-    finally:
-        db.close()
-    del db
-
-    push_data()
-    cProfile.run('process_link_crawler(20)')
-
+    check_init()
+    # push_data()
+    cProfile.run('process_link_crawler({})'.format(THREADS))
