@@ -1,32 +1,19 @@
 from AddLink import *
-from MultiProcessingCrawler import *
 import cProfile
-import logging
-import sys
 from PostgreSQL import PostgresQueue
-
-
-logging.basicConfig(filename='phong_main.log',level=logging.DEBUG)
-logger = logging.getLogger(__name__)
-
-
-def my_handler(extype, value, tb):
-    logger.exception("Uncaught exception: \n Type: {0}, Value: {1}, Traceback: {2}".
-                     format(str(extype), str(value), str(tb)))
-
-
-sys.excepthook = my_handler
+from MultiProcessingCrawler import process_link_crawler
 
 
 if __name__ == '__main__':
-    a = PostgresQueue()
+    db = PostgresQueue()
     try:
-        a.reset_outstanding()
+        db.reset_outstanding()
     except Exception as e:
         print(str(e))
     finally:
-        a.close()
+        db.close()
+    del db
 
     push_data()
-    cProfile.run('process_link_crawler(4)')
+    cProfile.run('process_link_crawler(20)')
 

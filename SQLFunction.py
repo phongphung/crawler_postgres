@@ -1,5 +1,6 @@
 from psycopg2 import sql
 from datetime import datetime
+from local_var import *
 
 
 def sql_query_table_exists(schema, table_name):
@@ -62,7 +63,6 @@ def sql_query_update_data_json_execute(schema, table, data_json, cur, append=Tru
                     sql.Identifier(i[0]),
                     sql.Placeholder())
         query += sql.SQL(' WHERE _id = {}').format(sql.Placeholder())
-        print('Update info: {}'.format(data_json.get('url')))
         cur.execute(query, tuple([x[1] for x in data_normal] + [x[1] for x in data_list] + [_id]))
     else:
         query = sql.SQL("UPDATE {}.{} SET ({{}}) = ({{}}) WHERE _id = {{}}".format(schema, table)).format(
@@ -78,6 +78,7 @@ def sql_query_check_not_crawled_execute(schema, table, cur, limit):
                         SELECT id
                         FROM {0}.{1}
                         WHERE status = 0
+                        FOR UPDATE
                         LIMIT {2}
                 )
                 UPDATE {0}.{1} db
@@ -93,8 +94,8 @@ def sql_query_check_not_crawled_execute(schema, table, cur, limit):
 
 
 def sql_query_create_data_temp_table(name):
-    return "CREATE TEMP TABLE {} AS SELECT * FROM crawl01.data LIMIT 0".format(name)
+    return "CREATE TEMP TABLE {} AS SELECT * FROM {}.{} LIMIT 0".format(name, SCHEMA, DATA_TABLE)
 
 
 def sql_query_drop_table(name):
-    return "DROP TABLE {}".format(name)
+    return "DROP TABLE IF EXISTS {}".format(name)
