@@ -7,15 +7,11 @@ import csv
 from psycopg2.pool import ThreadedConnectionPool, PoolError
 from contextlib import contextmanager
 import psycopg2.extras
-
-LOCAL_DB = "dbname='crawler' user='postgres' host='localhost' password='motsach' port=5432"
-CRAWL_TABLE = 'crawlQueue'
-DATA_TABLE = 'data'
-SCHEMA = 'crawl01'
-TEMP_DATA_TABLE = 'tmp_data'
+from random import randint
+from local_var import *
 
 
-def query_timeout(func, conn, description='No Desc', retries=3):
+def query_timeout(func, conn, description='No Desc', retries=RETRY_CONNECT):
     def func_wrapper(*args, **kwargs):
         _retries = retries
         _desc = description
@@ -85,51 +81,111 @@ def replace_array_postgres(x):
     return x
 
 
+def execute(query, conn, cur, commit=False):
+    query_timeout(cur.execute, conn)(query)
+    if commit:
+        conn.commit()
+
+
+def set_buffer_timeout(conn, cur, mb=BUFFER_SIZE, sec=TIMEOUT):
+    query_timeout(cur.execute, conn)("SET temp_buffers = '{}MB'".format(mb))
+    query_timeout(cur.execute, conn)("SET statement_timeout = '{}s'".format(sec))
+    conn.commit()
+
+
+def create_temp_table(conn, cur, name=TEMP_DATA_TABLE):
+    temp = True
+    while temp:
+        name = name + str(randint(100000, 999999))
+        query_exists = sql_query_table_exists(SCHEMA, name)
+        query_timeout(cur.execute, conn)(query_exists)
+        temp = cur.fetchone().get('exists')
+    query = sql_query_create_data_temp_table(name)
+    query_timeout(cur.execute, conn)(query)
+    conn.commit()
+    return name
+
+
+def drop_temp_table(conn, cur, name):
+    query = sql_query_drop_table(name)
+    query_timeout(cur.execute, conn)(query)
+    conn.commit()
+
+
+def temp_update(conn, cur, data, table_name):
+    f = io.StringIO()
+    data.fillna('', inplace=True)
+    data.drop_duplicates(['_id'], inplace=True)
+    data.reset_index(inplace=True, drop=True)
+
+    array_list_columns = ['twitter_list', 'rss', 'error']
+    columns = data.columns
+    for column in array_list_columns:
+        if column in columns:
+            data[column] = data[column].apply(replace_array_postgres)
+
+    data.to_csv(f, index=False, quoting=csv.QUOTE_ALL)
+    push(conn, cur, schema='', table_name=table_name, file_object=f)
+
+
+def push(conn, cur, schema=SCHEMA, table_name=DATA_TABLE, file_object=None):
+    if file_object:
+        file_object.seek(0)
+        if schema:
+            query = """
+                COPY {}.{}({}) FROM STDIN WITH
+                    CSV
+                    HEADER
+                    DELIMITER AS ','
+            """.format(schema, table_name, file_object.readline()[:-1])
+        else:
+            query = """
+                        COPY {}({}) FROM STDIN WITH
+                            CSV
+                            HEADER
+                            DELIMITER AS ','
+                    """.format(table_name, file_object.readline()[:-1])
+        file_object.seek(0)
+
+        query_timeout(cur.copy_expert, conn, description='Push copy')(sql=query, file=file_object)
+        conn.commit()
+
+
+def merge_temp_table(conn, cur, table_name):
+    query = """
+                UPDATE {0} test
+                SET title = temp.title,
+                    description = temp.description,
+                    meta_twitter = temp.meta_twitter,
+                    locale = temp.locale,
+                    meta_title = temp.meta_title,
+                    meta_url = temp.meta_url,
+                    meta_site_name = temp.meta_site_name,
+                    twitter_list = array_cat(test.twitter_list, temp.twitter_list),
+                    rss = array_cat(test.rss, temp.rss),
+                    url = temp.url,
+                    lang = temp.lang,
+                    error = array_cat(test.error, temp.error)
+                FROM {1} temp
+                WHERE test._id = temp._id
+            """.format(SCHEMA + '.' + DATA_TABLE, table_name)
+    print(query)
+    query_timeout(cur.execute, conn)(query)
+    conn.commit()
+
+
 class PostgresQueue:
-    # download states
-    OUTSTANDING, PROCESSING, COMPLETE, ERROR = range(4)
 
     def __init__(self, timeout=300, schema=SCHEMA):
         self.timeout = timeout
         self.schema = schema
         self.pool = ThreadedConnectionPool(1, 3, LOCAL_DB)
-        print('Created_pool')
         self.check_storage()
-        self.create_temp_table(TEMP_DATA_TABLE)
-
-    @retry_connect
-    def execute(self, query, commit=False):
-        with get_db_connection(self.pool) as conn:
-            with get_db_cursor(conn) as cur:
-                query_timeout(cur.execute, conn)(query)
-                if commit:
-                    conn.commit()
-
-    @retry_connect
-    def set_temp_buffers(self, mb):
-        with get_db_connection(self.pool) as conn:
-            with get_db_cursor(conn) as cur:
-                query_timeout(cur.execute, conn)("SET temp_buffers = '{}MB'".format(mb))
-                conn.commit()
-
-    @retry_connect
-    def create_temp_table(self, name=TEMP_DATA_TABLE):
-        with get_db_connection(self.pool) as conn:
-            with get_db_cursor(conn) as cur:
-                query = sql_query_create_data_temp_table(name)
-                query_timeout(cur.execute, conn)(query)
-
-    @retry_connect
-    def reset_temp_table(self, name=TEMP_DATA_TABLE):
-        with get_db_connection(self.pool) as conn:
-            with get_db_cursor(conn) as cur:
-                query = sql_query_drop_table(name)
-                query_timeout(cur.execute, conn)(query)
-                self.create_temp_table()
 
     @retry_connect
     def check_storage(self):
         with get_db_connection(self.pool) as conn, get_db_cursor(conn) as cur:
+            set_buffer_timeout(conn, cur)
             query_timeout(cur.execute, conn)(sql_query_schema_exists(self.schema))
             conn.commit()
 
@@ -188,63 +244,36 @@ class PostgresQueue:
     def close(self):
         self.pool.closeall()
 
-    @retry_connect
-    def error(self, url, domain):
-        with get_db_connection(self.pool) as conn:
-            with get_db_cursor(conn) as cur:
-                query = """
-                            UPDATE {}.{}
-                            SET error = array_append(error, '{}')
-                            WHERE _id = '{}'
-                        """.format(self.schema, DATA_TABLE, url, domain)
-                try:
-                    query_timeout(cur.execute, conn)(query)
-                except db.ProgrammingError:
-                    conn.rollback()
-                    time.sleep(5)
-                    query_timeout(cur.execute, conn)(query)
-                conn.commit()
+    # @retry_connect
+    # def error(self, url, domain):
+    #     with get_db_connection(self.pool) as conn:
+    #         with get_db_cursor(conn) as cur:
+    #             query = """
+    #                         UPDATE {}.{}
+    #                         SET error = array_append(error, '{}')
+    #                         WHERE _id = '{}'
+    #                     """.format(self.schema, DATA_TABLE, url, domain)
+    #             try:
+    #                 query_timeout(cur.execute, conn)(query)
+    #             except db.ProgrammingError:
+    #                 conn.rollback()
+    #                 time.sleep(5)
+    #                 query_timeout(cur.execute, conn)(query)
+    #             conn.commit()
 
     @retry_connect
     def __nonzero__(self):
         with get_db_connection(self.pool) as conn, get_db_cursor(conn) as cur:
             query_timeout(cur.execute("""
                             SELECT EXISTS(SELECT * FROM {}.{} WHERE status != {})
-                        """.format(self.schema, CRAWL_TABLE, self.COMPLETE)), conn)
+                        """.format(self.schema, CRAWL_TABLE, COMPLETE)), conn)
         return cur.fetchone().get('exists')
-
-    @retry_connect
-    def push(self, schema=SCHEMA, table_name=DATA_TABLE, file_object=None):
-        with get_db_connection(self.pool) as conn:
-            with get_db_cursor(conn) as cur:
-                if file_object:
-                    file_object.seek(0)
-                    if schema:
-                        query = """
-                            COPY {}.{}({}) FROM STDIN WITH
-                                CSV
-                                HEADER
-                                DELIMITER AS ','
-                        """.format(schema, table_name, file_object.readline()[:-1])
-                    else:
-                        query = """
-                                    COPY {}({}) FROM STDIN WITH
-                                        CSV
-                                        HEADER
-                                        DELIMITER AS ','
-                                """.format(table_name, file_object.readline()[:-1])
-                        print('===================================================')
-                        print("QUERY:" + str(query))
-                    file_object.seek(0)
-
-                    query_timeout(cur.copy_expert, conn, description='Push copy')(sql=query, file=file_object)
-                    conn.commit()
-                    cur.close()
 
     @retry_connect
     def get_crawl_queue(self, limit):
         with get_db_connection(self.pool) as conn:
             with get_db_cursor(conn) as cur:
+                set_buffer_timeout(conn, cur)
                 record = sql_query_check_not_crawled_execute(self.schema, CRAWL_TABLE, cur, limit)
 
                 if len(record) != 0:
@@ -256,9 +285,10 @@ class PostgresQueue:
     @retry_connect
     def check_link_to_crawl(self):
         with get_db_connection(self.pool) as conn, get_db_cursor(conn) as cur:
+            set_buffer_timeout(conn, cur)
             query = """
-                SELECT 1 FROM {}.{} WHERE status = 0 LIMIT 1
-            """.format(self.schema, CRAWL_TABLE)
+                SELECT 1 FROM {}.{} WHERE status = {} LIMIT 1
+            """.format(self.schema, CRAWL_TABLE, OUTSTANDING)
 
             query_timeout(cur.execute, conn)(query)
             temp = cur.fetchall()
@@ -268,9 +298,10 @@ class PostgresQueue:
     def reset_outstanding(self):
         query = """
             UPDATE {}.{} SET status = {} WHERE status = {}
-        """.format(self.schema, CRAWL_TABLE, self.OUTSTANDING, self.PROCESSING)
+        """.format(self.schema, CRAWL_TABLE, OUTSTANDING, PROCESSING)
         with get_db_connection(self.pool) as conn:
             with get_db_cursor(conn) as cur:
+                set_buffer_timeout(conn, cur)
                 query_timeout(cur.execute, conn)(query)
                 conn.commit()
 
@@ -278,10 +309,11 @@ class PostgresQueue:
     def error_crawlqueue(self, url):
         query = """
                     UPDATE {}.{} SET status = {} WHERE _id = '{}'
-                """.format(self.schema, CRAWL_TABLE, self.ERROR, str(url))
+                """.format(self.schema, CRAWL_TABLE, ERROR, str(url))
 
         with get_db_connection(self.pool) as conn:
             with get_db_cursor(conn) as cur:
+                set_buffer_timeout(conn, cur)
                 query_timeout(cur.execute, conn)(query)
                 conn.commit()
 
@@ -289,6 +321,7 @@ class PostgresQueue:
     def update_status_crawlqueue(self, url_dict):
         with get_db_connection(self.pool) as conn:
             with get_db_cursor(conn) as cur:
+                set_buffer_timeout(conn, cur)
                 status_set = set(url_dict.values())
                 for status in status_set:
                     url_list = [k for (k, v) in url_dict.items() if v == status]
@@ -299,47 +332,16 @@ class PostgresQueue:
                     query = """
                         UPDATE {}.{} SET status = {} WHERE _id in {}
                     """.format(self.schema, CRAWL_TABLE, status, temp)
-                    print(query)
                     query_timeout(cur.execute, conn)(query)
                 conn.commit()
 
     @retry_connect
-    def temp_update(self, data):
-        f = io.StringIO()
-        data.fillna('', inplace=True)
-        data.drop_duplicates(['_id'], inplace=True)
-        data.reset_index(inplace=True, drop=True)
-
-        array_list_columns = ['twitter_list', 'rss', 'error']
-        columns = data.columns
-        for column in array_list_columns:
-            if column in columns:
-                data[column] = data[column].apply(replace_array_postgres)
-
-        data.to_csv(f, index=False, quoting=csv.QUOTE_ALL)
-        self.push(schema='', table_name=TEMP_DATA_TABLE, file_object=f)
-
-    @retry_connect
-    def merge_temp_table(self):
+    def push_by_temp_table(self, data):
         with get_db_connection(self.pool) as conn:
             with get_db_cursor(conn) as cur:
-                query = """
-                    UPDATE {0} test
-                    SET title = temp.title,
-                        description = temp.description,
-                        meta_twitter = temp.meta_twitter,
-                        locale = temp.locale,
-                        meta_title = temp.meta_title,
-                        meta_url = temp.meta_url,
-                        meta_site_name = temp.meta_site_name,
-                        twitter_list = array_cat(test.twitter_list, temp.twitter_list),
-                        rss = array_cat(test.rss, temp.rss),
-                        url = temp.url,
-                        lang = temp.lang,
-                        error = array_cat(test.error, temp.error)
-                    FROM {1} temp
-                    WHERE test._id = temp._id
-                """.format(SCHEMA + '.' + DATA_TABLE, TEMP_DATA_TABLE)
-                print(query)
-                query_timeout(cur.execute, conn)(query)
-                conn.commit()
+                set_buffer_timeout(conn, cur)
+                tmp_name = create_temp_table(conn, cur)
+                temp_update(conn, cur, data, tmp_name)
+                merge_temp_table(conn, cur, tmp_name)
+                drop_temp_table(conn, cur, tmp_name)
+

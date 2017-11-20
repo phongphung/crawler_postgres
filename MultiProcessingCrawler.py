@@ -1,11 +1,10 @@
 import multiprocessing as mp
 from ThreadedCrawler import threaded_crawler
-from Test import test
 
 
 def process_link_crawler(args, **kwargs):
     num_processes = mp.cpu_count() * 5
-    num_processes = 1
+    # num_processes = 1
     processes = []
 
     for i in range(num_processes):

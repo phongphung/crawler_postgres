@@ -12,9 +12,8 @@ if __name__ == '__main__':
         print(str(e))
     finally:
         db.close()
-
     del db
 
-    # push_data()
-    cProfile.run('process_link_crawler(1)')
+    push_data()
+    cProfile.run('process_link_crawler(20)')
 

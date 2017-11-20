@@ -1,25 +1,20 @@
 import threading
 import time
 from WebCrawler import WebCrawler
-from PostgreSQL import PostgresQueue
-
-
-WAIT_AT_END = 10
+from PostgreSQL import *
+from local_var import *
 
 
 def threaded_crawler(max_threads=5):
     db = PostgresQueue()
     try:
 
-        db.set_temp_buffers(200)
-        db.execute("SET statement_timeout = '100s'", True)
-
         def process_queue():
             while True:
                 try:
                     print('Start thread')
                     web_crawler = WebCrawler()
-                    url_list = db.get_crawl_queue(10)
+                    url_list = db.get_crawl_queue(100)
                     url_dict = {x: 0 for x in url_list}
                 except KeyError:
                     break
@@ -27,8 +22,7 @@ def threaded_crawler(max_threads=5):
                     for url in url_dict.keys():
                         url_dict[url] = web_crawler.crawl(url)
 
-                    db.temp_update(web_crawler.result)
-                    db.merge_temp_table()
+                    db.push_by_temp_table(web_crawler.result)
                     db.update_status_crawlqueue(url_dict)
 
         threads = []
@@ -54,7 +48,7 @@ def threaded_crawler(max_threads=5):
                 if not thread.is_alive():
                     threads.remove(thread)
             time.sleep(10)
-
+        time.sleep(WAIT_AT_END)
     except Exception as e:
         raise e
     finally:
