@@ -210,7 +210,12 @@ class PostgresQueue:
                       rss text[],
                       url VARCHAR(5000),
                       lang VARCHAR(5000),
-                      error text[]
+                      error text[],
+                      dummy0 VARCHAR(5000),
+                      dummy1 VARCHAR(5000),
+                      dummy2 VARCHAR(5000),
+                      dummy3 VARCHAR(5000),
+                      dummy4 VARCHAR(5000)
                     )
                 """.format(self.schema, DATA_TABLE)
                 query_timeout(cur.execute, conn)(query)
@@ -243,23 +248,6 @@ class PostgresQueue:
 
     def close(self):
         self.pool.closeall()
-
-    # @retry_connect
-    # def error(self, url, domain):
-    #     with get_db_connection(self.pool) as conn:
-    #         with get_db_cursor(conn) as cur:
-    #             query = """
-    #                         UPDATE {}.{}
-    #                         SET error = array_append(error, '{}')
-    #                         WHERE _id = '{}'
-    #                     """.format(self.schema, DATA_TABLE, url, domain)
-    #             try:
-    #                 query_timeout(cur.execute, conn)(query)
-    #             except db.ProgrammingError:
-    #                 conn.rollback()
-    #                 time.sleep(5)
-    #                 query_timeout(cur.execute, conn)(query)
-    #             conn.commit()
 
     @retry_connect
     def __nonzero__(self):

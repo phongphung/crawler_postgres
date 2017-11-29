@@ -1,7 +1,7 @@
 # PhongPhung
 # Email: phongifls@gmail.com
 # Linked in: www.linkedin.com/in/phong-phung/
-# Phone: +83 1268900219
+# Phone: +84 1268900219
 # -------------------------------------------
 data:
   FOLDER: Data
@@ -17,8 +17,8 @@ settings:
 
 database:
   LOCAL_DB: "dbname='crawler' user='postgres' host='localhost' password='motsach' port=5432"
-  CRAWL_TABLE: crawlQueue
-  DATA_TABLE: data
+  CRAWL_TABLE: David1
+  DATA_TABLE: DavidData
   SCHEMA: crawl01
   TEMP_DATA_TABLE: tmp_table
   BUFFER_SIZE: 200 # in mb

@@ -98,6 +98,32 @@ class PageInfoFinder(object):
             meta_url = simple_replace_special_char(temp[0].get('content'))
         return meta_url
 
+    @limit_4000
+    @handle_syntax
+    def dummy0(self, tree):
+        temp = tree.xpath('//a')
+        return str(temp)[:10]
+
+    @limit_4000
+    @handle_syntax
+    def dummy1(self, tree):
+        return 'dummy1'
+
+    @limit_4000
+    @handle_syntax
+    def dummy2(self, tree):
+        return 'dummy2'
+
+    @limit_4000
+    @handle_syntax
+    def dummy3(self, tree):
+        return 'dummy3'
+
+    @limit_4000
+    @handle_syntax
+    def dummy4(self, tree):
+        return 'dummy4'
+
     def find_info(self, tree):
         title = self.get_title(tree)
         description = self.get_description(tree)
@@ -106,6 +132,11 @@ class PageInfoFinder(object):
         meta_site_name = self.get_meta_site_name(tree)
         meta_title = self.get_meta_title(tree)
         meta_url = self.get_meta_url(tree)
+        dummy0 = self.dummy0(tree)
+        dummy1 = self.dummy1(tree)
+        dummy2 = self.dummy2(tree)
+        dummy3 = self.dummy3(tree)
+        dummy4 = self.dummy4(tree)
 
         try:
             twitter_list = list(
@@ -132,4 +163,9 @@ class PageInfoFinder(object):
                 "meta_site_name": meta_site_name,
                 "twitter_list": twitter_list,
                 "url": current_url,
-                "lang": lang}
+                "lang": lang,
+                "dummy0": dummy0,
+                "dummy1": dummy1,
+                "dummy2": dummy2,
+                "dummy3": dummy3,
+                "dummy4": dummy4}

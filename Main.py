@@ -6,5 +6,5 @@ from local_var import *
 
 if __name__ == '__main__':
     check_init()
-    # push_data()
+    push_data()
     cProfile.run('process_link_crawler({})'.format(THREADS))
